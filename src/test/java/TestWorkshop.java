@@ -21,7 +21,6 @@ import java.time.Duration;
 public class TestWorkshop {
     WebDriver webDriver;
     WebDriverWait webDriverWait;
-    LoginPagePO loginPagePO = new LoginPagePO();
     @Before
     public void beforeTest() throws MalformedURLException {
         // Set common desired capabilities
@@ -55,6 +54,7 @@ public class TestWorkshop {
     @Test
     public void Test1() throws InterruptedException {
 
+        LoginPagePO loginPagePO = new LoginPagePO();
         loginPagePO.clickHelpButton();
         Thread.sleep(5000);
 

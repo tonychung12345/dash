@@ -1,11 +1,14 @@
 import org.openqa.selenium.By;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebDriver;
 
 
 public class LoginPagePO {
 
-    WebDriver webDriver;
+    private WebDriver webDriver = null;
+
+    public LoginPagePO(){
+        this.webDriver = webDriver;
+    }
     private final By phoneNumberTextBox = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");
     private final By helpButton = By.xpath("//android.widget.Button[@content-desc=\"幫助\"]");
     private final By confirmButton = By.xpath("//android.widget.Button[@content-desc=\"確認\"]");
