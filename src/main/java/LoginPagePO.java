@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPagePO {
 
-    private WebDriver webDriver = null;
+    private WebDriver webDriver;
 
-    public LoginPagePO(){
-        this.webDriver = webDriver;
+    public LoginPagePO(WebDriver webDriver){
+        this.webDriver = this.webDriver;
     }
     private final By phoneNumberTextBox = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");
     private final By helpButton = By.xpath("//android.widget.Button[@content-desc=\"幫助\"]");

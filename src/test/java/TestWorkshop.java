@@ -54,7 +54,7 @@ public class TestWorkshop {
     @Test
     public void Test1() throws InterruptedException {
 
-        LoginPagePO loginPagePO = new LoginPagePO();
+        LoginPagePO loginPagePO = new LoginPagePO(webDriver);
         loginPagePO.clickHelpButton();
         Thread.sleep(5000);
 
