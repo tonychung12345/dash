@@ -4,14 +4,17 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPagePO {
 
-    private WebDriver webDriver;
+    private final WebDriver webDriver;
 
     public LoginPagePO(WebDriver webDriver){
-        this.webDriver = this.webDriver;
+        this.webDriver = webDriver;
     }
-    private final By phoneNumberTextBox = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");
+    public final By phoneNumberTextBox = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");
     private final By helpButton = By.xpath("//android.widget.Button[@content-desc=\"幫助\"]");
-    private final By confirmButton = By.xpath("//android.widget.Button[@content-desc=\"確認\"]");
+    public final By confirmButton = By.xpath("//android.widget.Button[@content-desc=\"確認\"]");
+
+    public final By otp = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");
+    public final By confirmOTPButton = By.xpath("//android.widget.Button[@content-desc=\"提交\"]");
 
 
     public void clickHelpButton()
@@ -25,12 +28,24 @@ public class LoginPagePO {
     }
     public void inputPhoneNumber(String phoneNum)
     {
+        webDriver.findElement(phoneNumberTextBox).click();
         webDriver.findElement(phoneNumberTextBox).sendKeys(phoneNum);
     }
 
     public void loginDriverApp(String strPhoneNum)
     {
-        //inputPhoneNumber(strPhoneNum);
+        inputPhoneNumber(strPhoneNum);
         clickConfirmButton();
+    }
+
+    public void inputOTP(String otpSMS)
+    {
+        webDriver.findElement(otp).click();
+        webDriver.findElement(otp).sendKeys(otpSMS);
+    }
+
+    public void clickConfirmOTPButton()
+    {
+        webDriver.findElement(confirmOTPButton).click();
     }
 }
