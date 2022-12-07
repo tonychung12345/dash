@@ -1,12 +1,14 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class LoginPagePO {
+public class LoginPagePO extends BasePagePO{
 
     private final WebDriver webDriver;
 
-    public LoginPagePO(WebDriver webDriver){
+    public LoginPagePO(WebDriver webDriver, WebDriverWait webDriverWait){
+        super(webDriver, webDriverWait);
         this.webDriver = webDriver;
     }
     public final By phoneNumberTextBox = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText");

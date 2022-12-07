@@ -1,18 +1,18 @@
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class SignUpPO {
+public class SignUpPO extends BasePagePO {
 
     private final WebDriver webDriver;
 
-    public SignUpPO(WebDriver webDriver){
+    public SignUpPO(WebDriver webDriver, WebDriverWait webDriverWait){
+        super(webDriver, webDriverWait);
         this.webDriver = webDriver;
     }
     private final By settingButton = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.widget.ImageView[3]");

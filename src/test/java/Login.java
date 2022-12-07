@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Optional;
 
 
 public class Login {
@@ -51,7 +50,7 @@ public class Login {
     @Test
     public void Test1() throws InterruptedException {
 
-        LoginPagePO loginPagePO = new LoginPagePO(webDriver);
+        LoginPagePO loginPagePO = new LoginPagePO(webDriver, webDriverWait);
         loginPagePO.clickHelpButton();
         //webDriverWait.until(ExpectedConditions.presenceOfElementLocated(loginPagePO.phoneNumberTextBox));
         //loginPagePO.loginDriverApp("20221122");
