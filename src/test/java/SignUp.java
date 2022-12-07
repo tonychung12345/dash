@@ -55,7 +55,7 @@ public class SignUp {
     @Test
     public void Test2() throws InterruptedException {
 
-        SignUpPO signUpPO = new SignUpPO(webDriver);
+        SignUpPO signUpPO = new SignUpPO(webDriver, webDriverWait);
         signUpPO.clickSettingButton();
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(signUpPO.driverSignUpButton));
         signUpPO.clickDriverSignUpButton();
@@ -64,9 +64,10 @@ public class SignUp {
         signUpPO.inputEnglishName();
         signUpPO.inputChineseName();
         signUpPO.selectSex();
-        TouchActions action = new TouchActions(webDriver);
-        action.flick(webDriver.findElement(signUpPO.chineseName), 1, -10, 10);
-        action.perform();
+//        TouchActions action = new TouchActions(webDriver);
+//        action.flick(webDriver.findElement(signUpPO.chineseName), 1, -10, 10);
+//        action.perform();
+        signUpPO.scrollTo(signUpPO.chineseName, 5, 10);
         signUpPO.inputHKIDNum();
         Thread.sleep(5000);
 
